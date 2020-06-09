@@ -1,0 +1,19 @@
+1. Actulización de dependencias
+2. Instalación de @babel/register
+3. Instalación de express y dotenv
+4. Instalación nodemon como dependencia de desarrollo
+5. instalación de webpack-dev-middleware y webpack-hot-middleware --dev
+6.
+7.
+8.
+9. instalación ignore-styles para evitar la carga del css en el servidor.
+10. Descarga del asset-require-hook que permite renderizar tambien imagenes
+11. El hydrate de React.Dom, al momento del servidor enviar el HTML en string, con hydrate, el cliente mantiene el html y css cargado del string y solo hidrata el JS
+11. Pero el render, luego que el servidor envia el HTML y CSS y caga en el navegador, vuelve a solicitar todo el HTML y css para que sea utilizado por el cliente.
+12. Instalamos el compression-webpack-plugin para zipiar nuestro bundle
+12. Instalamos el terser-webpack-plugin --save-dev para minimizar aún más el JS
+13. Instalamos webpack-manifest-plugin para adjuntar hashes a los nombres de cada archivo cargado al navegador
+13. Esto no ayuda a que el navegador no tome una versión anterior de nuestroa archivo en producción que guarda en caché
+14. Los chunks configurados obtienen toda la lógina de los node_modules (Comun) que hemos importado para usar en nuestro código y lo guardamos en vendors.js
+14. La lógina que hemos programado (Partiular) es guardado en otro archivo llamado main. Cuando se realiza un cambio, el navegador valida que no se hayan realizado cambios en los node_modules
+14. Además almacena el navegador el archivo vendor.js en la caché del navegador para su carga más rápida, en caso vea diferencias, lo vuelve a descarga, sino solo descarga el maín que ha sido cambiado.
